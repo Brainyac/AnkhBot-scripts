@@ -1,0 +1,83 @@
+* { 
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+body {
+  opacity: 1;
+}
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#container {
+  float: left;
+  min-width: 500px;
+  max-width: 700px;
+  
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12pt;
+  color: #fff;
+  opacity: 0;
+}
+#header {
+  background-color: #1e1e1e;
+  border-radius: 3px;
+  
+  padding: 10px;
+  text-align: center;
+}
+h1 {
+  font-size: 16pt;
+  color: #fff;
+  margin: 0;
+}
+#gaCmd, #gaPerm, #gaInfo, #gaTicketCost, #gaMaxTickets, #timer {
+  display: inline;
+  padding-right: 15px;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #fff;
+  font-size: 10pt;
+}
+#stats span {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #e67e22;
+}
+#content {
+  float: left;
+  width: 100%;
+  position: relative;
+  top: 10px;
+}
+#entryContainer {
+  float: left;
+  width: 100%;
+  border-radius: 3px;
+  background-color: #1e1e1e;
+  padding: 10px;
+  opacity: 0;
+}
+#entryContainer li {
+  float: left;
+  width: 48%;
+  margin: .5% 1%;
+  border-radius: 3px;
+  
+  padding: 3px 10px;
+  font-size: 12pt;
+  color: #fff;
+  background-color: #e67e22;
+}
+.entryName {
+  float: left;
+  width: 60%;
+  overflow: hidden;
+}
+.entryOption {
+  float: right;
+  width: 40%;
+  text-align: right;
+}
