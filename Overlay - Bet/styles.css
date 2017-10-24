@@ -1,0 +1,118 @@
+* { 
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#container {
+  float: left;
+  min-width: 500px;
+  max-width: 700px;
+
+  position: relative;
+  left: 0;
+  height: auto;
+  
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12pt;
+  color: #fff;
+  opacity: 0;
+}
+#header {
+  background-color: #1e1e1e;
+  width: 100%;
+  border-radius: 3px;
+  position: relative;
+  left: -800px;
+  padding: 10px;
+  margin: 0;
+}
+h1 {
+  font-size: 16pt;
+  color: #fff;
+  margin: 0;
+}
+#minBet, #maxBet, #isMultiBet, #totalBets, #timer, #payoutPercentage {
+  display: inline;
+  padding-right: 15px;
+  text-transform: uppercase;
+  font-weight: normal;
+  color: #fff;
+  font-size: 10pt;
+}
+#stats span {
+  font-size: 12pt;
+  font-weight: bold;
+  color: #e67e22;
+}
+#content {
+  width: 100%;
+  position: relative;
+  top: 10px;
+}
+#optionContainer, #entryContainer {
+  display: inline-block;
+  border-radius: 3px;
+  position: relative;
+  float: left;
+}
+#optionContainer {
+  width: 50%;
+  margin-right: 1%;
+  background-color: none;
+}
+#optionContainer li {
+  background-color: rgba(30,30,30,1);
+  padding: 10px;
+  margin-bottom: 3px;
+  border-radius: 3px;
+  position: relative;
+  left: 0;
+  opacity: 0;
+  font-size: 12pt;
+}
+.optionName, .optionInfo {
+  display: inline;
+  width: 50%;
+}
+.optionInfo {
+  margin-right: 5px;
+  float: right;
+  text-align: right;
+}
+
+#entryContainer {
+  background-color: #1e1e1e;
+  padding: 10px;
+  width: 49%;
+}
+#entryContainer li {
+  display: inline-block;
+  width: 100%;
+  padding: 3px 10px;
+  font-size: 12pt;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #e67e22;
+}
+#entryContainer li div {
+  display: inline;
+}
+.entryName {
+  float: left;
+  width: 50%;
+}
+.entryOption {
+  float: left;
+  width: 25%;
+  text-align: center;
+}
+.entryAmount {
+  float: right;
+  width: 25%;
+  text-align: right;
+}
