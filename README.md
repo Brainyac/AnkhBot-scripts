@@ -1,5 +1,5 @@
 # Streamlabs Chatbot-Scripts
 
-⋅⋅* Overlay - Betting
-⋅⋅* Overlay - Giveaway
-⋅⋅* Overlay - Poll
+* Overlay - Betting
+* Overlay - Giveaway
+* Overlay - Poll
