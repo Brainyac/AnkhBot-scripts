@@ -1,0 +1,41 @@
+﻿{
+    "output_file": "GiveawayConfig.json", 
+    "openReadMe": {
+        "type": "button", 
+        "label": "Giveaway Test", 
+        "tooltip": "", 
+        "function": "TestGiveaway", 
+        "wsevent": "", 
+        "group": ""
+    }, 
+    "openOverlayFolder": {
+        "type": "button", 
+        "label": "Open Overlays Folder", 
+        "tooltip": "Opens the folder where you can find all the Overlays for the Giveaway.", 
+        "function": "BtnOpenOverlaysFolder", 
+        "wsevent": "", 
+        "group": ""
+    }, 
+    "overlayThemeName": {
+        "type": "dropdown", 
+        "items": [
+            "Streamlabs", 
+            "ZaneSkism"
+        ], 
+        "label": "Chosen Theme:", 
+        "tooltip": "Choose the theme you want to use.", 
+        "value": "Streamlabs", 
+        "group": ""
+    }, 
+    "overlayLanguage": {
+        "type": "dropdown", 
+        "items": [
+            "English", 
+            "German"
+        ], 
+        "label": "Chosen Language:", 
+        "tooltip": "Choose the language you want to use.", 
+        "value": "English", 
+        "group": ""
+    }
+}

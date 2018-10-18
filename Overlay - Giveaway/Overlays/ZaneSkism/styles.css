@@ -1,0 +1,88 @@
+* { 
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+/** IMPORTS **/
+@import url('https://fonts.googleapis.com/css?family=Marcellus+SC');
+
+body {
+  opacity: 1;
+}
+ul, li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+#container {
+  float: left;
+  min-width: 500px;
+  max-width: 700px;
+  font-family: 'Marcellus SC';
+  font-size: 12pt;
+  color: #fff;
+  opacity: 1;
+}
+#header {
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 3px;
+  padding: 10px;
+  text-align: center;
+}
+h1 {
+  font-size: 18pt;
+  color: #fff;
+  margin: 0;
+  margin-bottom: 10px;
+  background-color: #6441A4;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+#gaCmd, #gaPerm, #gaInfo, #gaTicketCost, #gaMaxTickets, #timer {
+  display: inline;
+  padding-right: 15px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 12pt;
+  font-weight: bold;
+}
+#stats span {
+  font-size: 12pt;
+  font-weight: normal !important;
+  color: #fff;
+}
+#content {
+  float: left;
+  width: 100%;
+  position: relative;
+  top: 10px;
+}
+#entryContainer {
+  float: left;
+  width: 100%;
+  border-radius: 3px;
+  background-color: rgba(0,0,0,0.75);
+  padding: 10px;
+  opacity: 0;
+}
+#entryContainer li {
+  float: left;
+  width: 48%;
+  margin: .5% 1%;
+  border-radius: 3px;
+  padding: 3px 10px;
+  font-size: 12pt;
+  color: #fff;
+  background-color: #6441A4;
+}
+.entryName {
+  float: left;
+  width: 60%;
+  overflow: hidden;
+}
+.entryOption {
+  float: right;
+  width: 40%;
+  text-align: right;
+}

@@ -1,0 +1,49 @@
+{
+    "start": {
+        "data": {
+            "command": "!gimme",
+            "prize": "NVIDIA 1080 Ti",
+            "permission": "Everyone",
+            "info": "",
+            "fee": 10,
+            "is_timed": true,
+            "timer": 500,
+            "use_cost": false,
+            "use_multi_entry": false,
+            "max_tickets": 2,
+            "currency_name": "Bugs",
+            "entries": [{
+                    "userid": "ankhheart/4598794548/UXM_g-vEyFpCu9R7BL4O32gw",
+                    "name": "ankhheart",
+                    "tickets": 1
+                },
+                {
+                    "userid": "mohammedbaraax1/5689751416/UCM_g-eVyFpCu9R7BL5049gw",
+                    "name": "mohammedbaraax1",
+                    "tickets": 1
+                }
+            ]
+        }
+    },
+    "vote1": {
+        "data": {
+            "userid": "castorr",
+            "name": "castorr",
+            "tickets": 10
+        }
+    },
+    "vote2": {
+        "data": {
+            "userid": "ankhheart/4598794548/UXM_g-vEyFpCu9R7BL4O32gw",
+            "name": "ankhheart",
+            "tickets": 5
+        }
+    },
+    "vote3": {
+        "data": {
+            "userid": "wellbrained",
+            "name": "wellbrained",
+            "tickets": 3
+        }
+    }
+}
