@@ -1,4 +1,4 @@
 ﻿var settings = {
-  "overlayThemeName": "Streamlabs",
-  "overlayLanguage": "German"
+  "overlayThemeName": "AnkhBot",
+  "overlayLanguage": "English"
 };

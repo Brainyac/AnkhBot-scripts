@@ -3,12 +3,11 @@
 
 <head lang="en">
   <meta charset="UTF-8">
-  <title>Giveaway Overlay</title>
+  <title>Giveaway Overlay - Theme: Streamlabs</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="libs/animate.min.css">
   <script src="../../API_Key.js"></script>
   <script src="../userSettings.js"></script>
-  <script src="../../GiveawayConfig.js"></script>
   <script src="../../Data/languages.js"></script>
   <script src="libs/vue.min.js"></script>
 </head>
@@ -32,13 +31,14 @@
               </div>
               <br />
               <div id="gaTicketCost">
-               TICKEST COST:  <span>{{header.ticketCost}}</span> {{header.currency}}
+                TICKEST COST: <span>{{header.ticketCost}}</span> {{header.currency}}
               </div>
               <div id="gaMaxTickets">
                 MAX TICKETS: <span>{{header.maxTickets}}</span>
               </div>
               <br />
-              <div id="timer">TIME REMAINING: <span>{{hours | two_digits}}:{{minutes | two_digits}}:{{seconds | two_digits}}</span></div>
+              <div id="timer">TIME REMAINING: <span>{{hours | two_digits}}:{{minutes | two_digits}}:{{seconds |
+                  two_digits}}</span></div>
             </div>
           </div>
         </transition>

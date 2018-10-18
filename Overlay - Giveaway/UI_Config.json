@@ -19,8 +19,8 @@
     "overlayThemeName": {
         "type": "dropdown", 
         "items": [
-            "Streamlabs", 
-            "ZaneSkism"
+            "AnkhBot", 
+            "Streamlabs"
         ], 
         "label": "Chosen Theme:", 
         "tooltip": "Choose the theme you want to use.", 
