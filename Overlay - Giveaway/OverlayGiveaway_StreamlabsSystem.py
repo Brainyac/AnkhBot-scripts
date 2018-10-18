@@ -48,28 +48,39 @@ def Init():
     global settings, configFile
     path = os.path.dirname(__file__)
 
-    try:
-        themes = [x for x in os.listdir(os.path.join(path, "Overlays"))
-        if os.path.isdir(os.path.join(path, "Overlays", x))]
-        rewriteUIConfig(dictKey="overlayThemeName", newItems=themes, configFile=os.path.join(path, "UI_Config.json"))
+    # try:
+    themes = [x for x in os.listdir(os.path.join(path, "Overlays"))
+    if os.path.isdir(os.path.join(path, "Overlays", x))]
+    rewriteUIConfig(dictKey="overlayThemeName", newItems=themes, configFile=os.path.join(path, "UI_Config.json"))
 
-        with codecs.open(os.path.join(path, configFile), encoding='utf-8-sig', mode='r') as file:
-            settings = json.load(file, encoding='utf-8-sig')
+    with codecs.open(os.path.join(path, configFile), encoding='utf-8-sig', mode='r') as file:
+        settings = json.load(file, encoding='utf-8-sig')
 
-        if len(settings.get("overlayThemeName", "")) != 0:
-            settings["configFileLoaded"] = True
+    if len(settings.get("overlayThemeName", "")) != 0:
+        settings["configFileLoaded"] = True
 
-    except Exception as e:
-        return
+    # except Exception as e:
+    #     return
 
+    Parent.Log("GAO", json.dumps(settings))
     PushData("initThemeData")
+    return
+
+def ReloadSettings(jsonData):
+    Init()
+    return
+
+def Execute(data):
+    return
+
+def Tick():
     return
 
 def PushData(eventName):
     global settings
 
     if eventName == "initThemeData":
-        Parent.BroadcastWsEvent("EVENT_INIT_THEME", json.dumps({"themeName": settings["overlayThemeName"], "language": settings["language"]}, ensure_ascii=False))
+        Parent.BroadcastWsEvent("EVENT_INIT_THEME", json.dumps({"themeName": settings["overlayThemeName"], "themeLanguage": settings["overlayLanguage"]}, ensure_ascii=False))
 
 def rewriteUIConfig(dictKey, newItems, configFile=""):
     dictionary = OrderedDict()
@@ -89,16 +100,6 @@ def rewriteUIConfig(dictKey, newItems, configFile=""):
                     json.dump(dictionary, file, encoding='utf-8-sig', indent=4, sort_keys=False)
             except:
                 return
-
-def ReloadSettings(jsonData):
-    Init()
-    return
-
-def Execute(data):
-    return
-
-def Tick():
-    return
 
 dummyAmount = 10
 dummyName = "Wellbrained"

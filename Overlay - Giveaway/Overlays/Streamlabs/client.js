@@ -133,7 +133,7 @@ var vm = new Vue({
         vm.winner.tickets = eventData.tickets;
       }
       //  You have received new data now process it
-      console.log("New Data to client.js:");
+      console.log("New Data to Streamlabs/client.js:");
       console.log(json);
     };
     //---------------------------------

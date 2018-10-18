@@ -7,8 +7,6 @@
     <title>Streamlabs Chatbot - Giveaway Overlay</title>
     
     <script src="../API_Key.js"></script>
-    <script src="themeLoader.js"></script>
-    <script src="../GiveawayConfig.js"></script>
     <style>
         body, html {
             margin: 0;
@@ -23,11 +21,22 @@
             bottom: 0;
             top: 0;
         }
+        .error {
+            display: grid;
+            margin-top: 50px;
+
+            justify-content: center;
+            color: tomato;
+            font-size: 20px;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <!-- the index of the chosen them will be inserted into the body per <object> -->
 <body id="themeBody">
     
+    <script src="../GiveawayConfig.js"></script>
+    <script src="themeLoader.js"></script>
 </body>
 </html>

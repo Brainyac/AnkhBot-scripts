@@ -3,7 +3,8 @@ if (window.WebSocket) {
     socket = null;
 
     if (typeof API_Key === "undefined") {
-        $("body").html("Error: No API Key was found in the directory!<br>Rightclick on the Script in Chatbot and select 'Insert API Key'");
+        content = document.getElementById('themeBody');
+        content.innerHTML = "<div class='error'>Error: No API Key was found in the directory!<br>Rightclick on the Script in Chatbot and select 'Insert API Key'.<br>Afterwards refresh this page.</div>";
     }
 
     function Connect() {
@@ -24,14 +25,15 @@ if (window.WebSocket) {
 
         socket.onmessage = function(message) {
             var jsonObject = JSON.parse(message.data);
-            if (jsonObject.event == "EVENT_INIT_THEME") {
-                SetThemeForOverlay(JSON.parse(jsonObject.data).themeName);
-            } else if (settings.overlayThemeName !== "") {
-                SetThemeForOverlay(settings.overlayThemeName);
-            } else {
-                SetThemeForOverlay("Streamlabs");
-                console.log("No theme selected. Load default 'Streamlabs'.");
+            if (jsonObject.event == "EVENT_CONNECTED") {
+                return;
             }
+            if (jsonObject.event == "EVENT_INIT_THEME") {
+                SetThemeForOverlay(JSON.parse(jsonObject.data).themeName, JSON.parse(jsonObject.data).themeLanguage);
+            } else {
+                console.log("No theme selected. Load default 'Streamlabs'.");
+                SetThemeForOverlay("Streamlabs", "English");
+            } 
         };
 
         socket.onerror = function(error) {
@@ -47,9 +49,9 @@ if (window.WebSocket) {
 
     Connect();
 
-    function SetThemeForOverlay(name) {
+    function SetThemeForOverlay(name, language) {
         console.log("Selected Theme: " + name);
-        console.log("Selected Language: " + settings.overlayLanguage);
+        console.log("Selected Language: " + language);
         document.getElementById('themeBody').innerHTML = "<iframe src='" + name + "/index.html' width='100%' height='100%' frameborder='0' scrolling='no'></iframe>";
     }
 }
