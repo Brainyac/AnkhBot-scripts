@@ -1,4 +1,4 @@
 ﻿var settings = {
   "overlayThemeName": "AnkhBot",
-  "overlayLanguage": "English"
+  "overlayLanguage": "German"
 };

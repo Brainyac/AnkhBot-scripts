@@ -48,7 +48,6 @@ def Init():
     global settings, configFile
     path = os.path.dirname(__file__)
 
-    # try:
     themes = [x for x in os.listdir(os.path.join(path, "Overlays"))
     if os.path.isdir(os.path.join(path, "Overlays", x))]
     rewriteUIConfig(dictKey="overlayThemeName", newItems=themes, configFile=os.path.join(path, "UI_Config.json"))
@@ -58,9 +57,6 @@ def Init():
 
     if len(settings.get("overlayThemeName", "")) != 0:
         settings["configFileLoaded"] = True
-
-    # except Exception as e:
-    #     return
 
     Parent.Log("GAO", json.dumps(settings))
     PushData("initThemeData")
