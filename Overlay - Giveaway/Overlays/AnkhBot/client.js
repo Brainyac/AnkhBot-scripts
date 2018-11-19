@@ -48,7 +48,6 @@ if (window.WebSocket) {
       if (jsonObject.event == "EVENT_GIVEAWAY_START") {
         console.log("Start Event triggered");
         Start(jsonObject.data);
-        console.log(themeLanguage);
       } else if (jsonObject.event == "EVENT_GIVEAWAY_STOP") {
         console.log("End Event triggered");
         timeLeft = 0;
@@ -77,20 +76,20 @@ if (window.WebSocket) {
   function Start(data) {
     if (giveawayStarted) return;
     giveawayStarted = true;
-    console.log(languages);
+    console.log(languages[settings.overlayLanguage]);
 
     var jsonObject = JSON.parse(data);
     console.log("Start initialized.");
     console.log(jsonObject);
 
-    $("h1").html(`Giveaway with this prize: ${jsonObject.prize}`);
-    $("#gaCmd").html(`Command: <span>${jsonObject.command}</span>`);
-    $("#gaPerm").html(`Permission: <span>${jsonObject.permission}</span>`);
+    $("h1").html(`${languages[settings.overlayLanguage].giveaway}: ${jsonObject.prize}`);
+    $("#gaCmd").html(`${languages[settings.overlayLanguage].command}: <span>${jsonObject.command}</span>`);
+    $("#gaPerm").html(`${languages[settings.overlayLanguage].permission}: <span>${jsonObject.permission}</span>`);
     if (jsonObject.info != "") {
-      $("#gaInfo").html(`Info: <span>${jsonObject.info}</span>`);
+      $("#gaInfo").html(`${languages[settings.overlayLanguage].info}: <span>${jsonObject.info}</span>`);
     }
-    $("#gaTicketCost").html(`Ticket cost: <span>${jsonObject.fee}</span> ${jsonObject.currency_name}`);
-    $("#gaMaxTickets").html(`Max Tickets: <span>${jsonObject.max_tickets}</span>`);
+    $("#gaTicketCost").html(`${languages[settings.overlayLanguage].ticket_cost}: <span>${jsonObject.fee}</span> ${jsonObject.currency_name}`);
+    $("#gaMaxTickets").html(`${languages[settings.overlayLanguage].ticket_max}: <span>${jsonObject.max_tickets}</span>`);
 
     if (jsonObject.is_timed) {
       timeLeft = jsonObject.timer;
@@ -112,7 +111,7 @@ if (window.WebSocket) {
     if (maxAmountOfEntries >= currentAmountOfEntries) {
       newListItem = `<li class='entry'>
                               <div class='entryName'>${jsonObject.name}</div>
-                              <div class='entryOption'>Tickets: ${jsonObject.tickets}</div>
+                              <div class='entryOption'>${languages[settings.overlayLanguage].ticket}: ${jsonObject.tickets}</div>
                           </li>`;
       $("#entryContainer ul").append(newListItem);
       currentAmountOfEntries++;
@@ -125,8 +124,8 @@ if (window.WebSocket) {
 
     $("#entryContainer ul").html(``);
     newListItem = `<li class='entry'>
-                          <div class='entryName'><b>Winner:</b> ${jsonObject.user}</div>
-                          <div class='entryOption'><b>Tickets:</b> ${jsonObject.tickets}</div>
+                          <div class='entryName'><b>${languages[settings.overlayLanguage].winner}: </b> ${jsonObject.user}</div>
+                          <div class='entryOption'><b>${languages[settings.overlayLanguage].ticket}: :</b> ${jsonObject.tickets}</div>
                       </li>`;
     $("#entryContainer ul").append(newListItem);
 
@@ -186,6 +185,6 @@ if (window.WebSocket) {
     output += minutes + ":";
     output += seconds;
 
-    $("#timer").html("Time remaining: <span>" + output + "</span>");
+    $("#timer").html(`${languages[settings.overlayLanguage].timer}: <span>${output}</span>`);
   }
 }

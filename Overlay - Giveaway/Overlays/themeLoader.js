@@ -2,7 +2,6 @@ if (window.WebSocket) {
     var serviceUrl = "ws://127.0.0.1:3337/streamlabs";
     socket = null;
 
-    var themeLanguage = "";
 
     if (typeof API_Key === "undefined") {
         content = document.getElementById('themeBody');
@@ -54,9 +53,6 @@ if (window.WebSocket) {
     function SetThemeForOverlay(name, language) {
         console.log("Selected Theme: " + name);
         console.log("Selected Language: " + language);
-        if (themeLanguage === "" && language != "" || themeLanguage != language) {
-            themeLanguage = language;
-        }
         document.getElementById('themeBody').innerHTML = "<iframe src='" + name + "/index.html' width='100%' height='100%' frameborder='0' scrolling='no'></iframe>";
     }
 }
